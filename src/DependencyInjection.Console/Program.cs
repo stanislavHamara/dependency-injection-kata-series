@@ -7,7 +7,9 @@ namespace DependencyInjection.Console
     {
         static void Main(string[] args)
         {
-            var patternSimulation = new PatternApp();
+            bool useColors = args.Length > 0 && args[0] == "colors";
+
+            var patternSimulation = new PatternApp(useColors);
             patternSimulation.Run();
         }
 
@@ -16,9 +18,9 @@ namespace DependencyInjection.Console
             private readonly IPatternWriter _patternWriter;
             private readonly IPatternGenerator _patternGenerator;
 
-            public PatternApp()
+            public PatternApp(bool useColours)
             {
-                _patternWriter = new TextPatternWriter();
+                _patternWriter = useColours ? (IPatternWriter)new ColorTextPatternWriter() : new TextPatternWriter();
                 _patternGenerator = new OddEvenPatternGenerator();
             }
 
@@ -118,6 +120,13 @@ namespace DependencyInjection.Console
         {
             White,
             Black,
+        }
+
+        class ColorTextPatternWriter : IPatternWriter
+        {
+            public void Write(Pattern pattern)
+            {
+            }
         }
     }
 }
