@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,8 @@ namespace DependencyInjection.Console
     {
         static void Main(string[] args)
         {
-
+            var mazeSimulation = new MazeSimulation();
+            mazeSimulation.Run();
         }
 
         class MazeSimulation
@@ -20,8 +22,12 @@ namespace DependencyInjection.Console
 
             public MazeSimulation()
             {
-                _mazeWriter = new ConsoleMazeWriter();
-                _mazeGenerator = new MazeGenerator();
+                _mazeWriter = new TextMazeWriter();
+                _mazeGenerator = new EmptyMazeGenerator();
+            }
+
+            public void Run()
+            {
             }
         }
 
@@ -30,10 +36,18 @@ namespace DependencyInjection.Console
             void Write(Maze maze);
         }
 
-        class ConsoleMazeWriter : IMazeWriter
+        class TextMazeWriter : IMazeWriter
         {
+            private readonly TextWriter _textWriter;
+
+            public TextMazeWriter()
+            {
+                _textWriter = System.Console.Out;
+            }
+
             public void Write(Maze maze)
             {
+
             }
         }
 
@@ -41,16 +55,28 @@ namespace DependencyInjection.Console
         {
         }
 
-        class MazeGenerator : IMazeGenerator
+        class EmptyMazeGenerator : IMazeGenerator
         {
-            public Maze Generate()
+            public Maze Generate(int width, int height)
             {
-                return new Maze();
+                return new Maze(width, height);
             }
         }
 
         class Maze
         {
+            public Maze(int width, int height)
+            {
+                Squares = new Square[width, height];
+            }
+
+            public Square[,] Squares { get; }
+        }
+
+        enum Square
+        {
+            Open,
+            Wall,
         }
     }
 }
