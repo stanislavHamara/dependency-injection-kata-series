@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DependencyInjection.Console
 {
@@ -11,61 +7,106 @@ namespace DependencyInjection.Console
     {
         static void Main(string[] args)
         {
-            var mazeSimulation = new MazeSimulation();
-            mazeSimulation.Run();
+            var patternSimulation = new PatternApp();
+            patternSimulation.Run();
         }
 
-        class MazeSimulation
+        class PatternApp
         {
-            private IMazeWriter _mazeWriter;
-            private IMazeGenerator _mazeGenerator;
+            private readonly IPatternWriter _patternWriter;
+            private readonly IPatternGenerator _patternGenerator;
 
-            public MazeSimulation()
+            public PatternApp()
             {
-                _mazeWriter = new TextMazeWriter();
-                _mazeGenerator = new EmptyMazeGenerator();
+                _patternWriter = new TextPatternWriter();
+                _patternGenerator = new OddEvenPatternGenerator();
             }
 
             public void Run()
             {
+                var pattern = _patternGenerator.Generate(10, 10);
+                _patternWriter.Write(pattern);
             }
         }
 
-        private interface IMazeWriter
+        private interface IPatternWriter
         {
-            void Write(Maze maze);
+            void Write(Pattern pattern);
         }
 
-        class TextMazeWriter : IMazeWriter
+        class TextPatternWriter : IPatternWriter
         {
             private readonly TextWriter _textWriter;
 
-            public TextMazeWriter()
+            public TextPatternWriter()
             {
                 _textWriter = System.Console.Out;
             }
 
-            public void Write(Maze maze)
+            public void Write(Pattern pattern)
             {
+                var squares = pattern.Squares;
 
+                for (int horizIndex = 0; horizIndex < squares.GetLength(0); ++horizIndex)
+                {
+                    for (int vertIndex = 0; vertIndex < squares.GetLength(1); ++vertIndex)
+                    {
+                        var squareCharacter = GetCharacter(squares[horizIndex, vertIndex]);
+                        _textWriter.Write(squareCharacter);
+                    }
+                    _textWriter.WriteLine();
+                }
+            }
+
+            private static char GetCharacter(Square square)
+            {
+                switch (square)
+                {
+                    case Square.White:
+                        return '.';
+                    case Square.Black:
+                        return '#';
+                    default:
+                        throw new ArgumentException("Char not found for square type " + square);
+                }
             }
         }
 
-        private interface IMazeGenerator
+        private interface IPatternGenerator
         {
+            Pattern Generate(int width, int height);
         }
 
-        class EmptyMazeGenerator : IMazeGenerator
+        class EmptyPatternGenerator : IPatternGenerator
         {
-            public Maze Generate(int width, int height)
+            public Pattern Generate(int width, int height)
             {
-                return new Maze(width, height);
+                return new Pattern(width, height);
             }
         }
 
-        class Maze
+        class OddEvenPatternGenerator : IPatternGenerator
         {
-            public Maze(int width, int height)
+            public Pattern Generate(int width, int height)
+            {
+                var generate = new Pattern(width, height);
+                var squares = generate.Squares;
+
+                for (int horizIndex = 0; horizIndex < squares.GetLength(0); ++horizIndex)
+                {
+                    for (int vertIndex = 0; vertIndex < squares.GetLength(1); ++vertIndex)
+                    {
+                        squares[horizIndex, vertIndex] = (horizIndex ^ vertIndex) % 2 == 0 ? Square.White : Square.Black;
+                    }
+                }
+
+                return generate;
+            }
+        }
+
+        class Pattern
+        {
+            public Pattern(int width, int height)
             {
                 Squares = new Square[width, height];
             }
@@ -75,8 +116,8 @@ namespace DependencyInjection.Console
 
         enum Square
         {
-            Open,
-            Wall,
+            White,
+            Black,
         }
     }
 }
