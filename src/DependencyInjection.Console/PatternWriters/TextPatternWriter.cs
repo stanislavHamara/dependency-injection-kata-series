@@ -1,7 +1,8 @@
 ﻿using System;
 using System.IO;
+using DependencyInjection.Console.Entities;
 
-namespace DependencyInjection.Console
+namespace DependencyInjection.Console.PatternWriters
 {
     internal class TextPatternWriter : IPatternWriter
     {

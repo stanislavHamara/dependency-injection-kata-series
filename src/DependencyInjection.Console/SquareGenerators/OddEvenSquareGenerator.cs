@@ -1,4 +1,6 @@
-﻿namespace DependencyInjection.Console
+﻿using DependencyInjection.Console.Entities;
+
+namespace DependencyInjection.Console.SquareGenerators
 {
     internal class OddEvenSquareGenerator : ISquareGenerator
     {

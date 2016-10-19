@@ -1,6 +1,7 @@
-﻿using System;
+using System;
+using DependencyInjection.Console.Entities;
 
-namespace DependencyInjection.Console
+namespace DependencyInjection.Console.SquareGenerators
 {
     internal class CircleSquareGenerator : ISquareGenerator
     {

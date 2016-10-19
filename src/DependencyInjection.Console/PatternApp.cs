@@ -1,4 +1,7 @@
-﻿namespace DependencyInjection.Console
+﻿using DependencyInjection.Console.PatternGenerators;
+using DependencyInjection.Console.PatternWriters;
+
+namespace DependencyInjection.Console
 {
     internal class PatternApp
     {

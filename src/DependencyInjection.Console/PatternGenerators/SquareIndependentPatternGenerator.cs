@@ -1,4 +1,7 @@
-﻿namespace DependencyInjection.Console
+﻿using DependencyInjection.Console.Entities;
+using DependencyInjection.Console.SquareGenerators;
+
+namespace DependencyInjection.Console.PatternGenerators
 {
     internal class SquareIndependentPatternGenerator : IPatternGenerator
     {
