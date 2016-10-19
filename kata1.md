@@ -6,6 +6,8 @@ Dependency injection does not requires a DI container. DI containers are optiona
 
 ## Poor Man's Dependency Injection
 
+When you do dependency injection without a container, it's called Poor Man's Dependency Injection.
+
 Here's the simplest example of dependency injection (specifically constructor injection):
 
 ```
