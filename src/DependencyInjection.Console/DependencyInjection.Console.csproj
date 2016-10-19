@@ -47,6 +47,7 @@
     <Compile Include="EmptyPatternGenerator.cs" />
     <Compile Include="IPatternGenerator.cs" />
     <Compile Include="IPatternWriter.cs" />
+    <Compile Include="CirclePatternGenerato.cs" />
     <Compile Include="OddEvenPatternGenerator.cs" />
     <Compile Include="Pattern.cs" />
     <Compile Include="PatternApp.cs" />
