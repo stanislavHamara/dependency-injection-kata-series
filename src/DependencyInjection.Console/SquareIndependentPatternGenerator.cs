@@ -1,7 +1,14 @@
 ﻿namespace DependencyInjection.Console
 {
-    internal abstract class SquareIndependentPatternGenerator : IPatternGenerator
+    internal class SquareIndependentPatternGenerator : IPatternGenerator
     {
+        private readonly ISquareGenerator _squareGenerator;
+
+        public SquareIndependentPatternGenerator()
+        {
+            _squareGenerator = new CircleSquareGenerator();
+        }
+
         public Pattern Generate(int width, int height)
         {
             var generate = new Pattern(width, height);
@@ -11,13 +18,11 @@
             {
                 for (var j = 0; j < height; ++j)
                 {
-                    squares[i, j] = GenerateSquare(width, height, i, j);
+                    squares[i, j] = _squareGenerator.GenerateSquare(width, height, i, j);
                 }
             }
 
             return generate;
         }
-
-        protected abstract Square GenerateSquare(int width, int height, int i, int j);
     }
 }

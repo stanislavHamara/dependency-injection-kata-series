@@ -8,7 +8,7 @@
         public PatternApp(bool useColours)
         {
             _patternWriter = useColours ? (IPatternWriter) new ColorTextPatternWriter() : new TextPatternWriter();
-            _patternGenerator = new CirclePatternGenerator();
+            _patternGenerator = new SquareIndependentPatternGenerator();
         }
 
         public void Run()

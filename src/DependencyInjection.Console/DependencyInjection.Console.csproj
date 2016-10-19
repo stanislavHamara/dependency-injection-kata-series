@@ -44,10 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColorTextPatternWriter.cs" />
-    <Compile Include="EmptyPatternGenerator.cs" />
+    <Compile Include="WhiteSquareGenerator.cs" />
     <Compile Include="IPatternGenerator.cs" />
     <Compile Include="IPatternWriter.cs" />
-    <Compile Include="CirclePatternGenerator.cs" />
+    <Compile Include="CircleSquareGenerator.cs" />
+    <Compile Include="ISquareGenerator.cs" />
     <Compile Include="OddEvenPatternGenerator.cs" />
     <Compile Include="Pattern.cs" />
     <Compile Include="PatternApp.cs" />
