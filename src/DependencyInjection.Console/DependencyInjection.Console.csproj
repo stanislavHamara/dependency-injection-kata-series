@@ -47,13 +47,14 @@
     <Compile Include="EmptyPatternGenerator.cs" />
     <Compile Include="IPatternGenerator.cs" />
     <Compile Include="IPatternWriter.cs" />
-    <Compile Include="CirclePatternGenerato.cs" />
+    <Compile Include="CirclePatternGenerator.cs" />
     <Compile Include="OddEvenPatternGenerator.cs" />
     <Compile Include="Pattern.cs" />
     <Compile Include="PatternApp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Square.cs" />
+    <Compile Include="SquareIndependentPatternGenerator.cs" />
     <Compile Include="TextPatternWriter.cs" />
   </ItemGroup>
   <ItemGroup>
