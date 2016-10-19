@@ -11,7 +11,7 @@
             {
                 for (var j = 0; j < squares.GetLength(1); ++j)
                 {
-                    squares[i, j] = (i ^ j) % 2 == 0 ? Square.White : Square.Black;
+                    squares[i, j] = ((i ^ j) & 1) == 0 ? Square.White : Square.Black;
                 }
             }
 
