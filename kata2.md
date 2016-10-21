@@ -41,3 +41,5 @@ public class CarTransportModule : Module
   }
 }
 ```
+
+Extract a single module for the entire app.
