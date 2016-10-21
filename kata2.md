@@ -14,7 +14,14 @@ Create an empty `ContainerBuilder` and call `builder.Build()` to build your firs
 
 After the first kata your entry point should contain all the object construction in your application.
 
-Replace all object construction using `new` by registering the class with Autofac and replacing it's usage with with `container.Resolve`.
+We will now replace all object construction using `new` with a single call to `container.Resolve`.
+
+You can replace classes one-by-one with a process like this:
+
+1. Find a class with no dependencies or dependencies already registered
+2. Register that class with Autofac
+3. Replace its usages with `container.Resolve`
+4. REPEAT until you resolve the top level class
 
 ## Task 3 - Extract a module
 
