@@ -6,7 +6,9 @@ Sometimes it is scary to choose a DI container because there is a risk that you'
 
 ## Task 1 - Add a DI library
 
-Install Autofac into the console application.
+Install Autofac using NuGet and add a reference into the console application.
+
+Create an empty `ContainerBuilder` and call `builder.Build()` to build your first `IContainer`.
 
 ## Task 2 - Register all your objects
 
