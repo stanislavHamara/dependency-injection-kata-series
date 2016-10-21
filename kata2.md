@@ -12,11 +12,9 @@ Create an empty `ContainerBuilder` and call `builder.Build()` to build your firs
 
 ## Task 2 - Register all your objects
 
-Replace newing up at top level with container.Resolve
+After the first kata your entry point should contain all the object construction in your application.
 
-Register top level object and dependencies
-
-Extract module
+Replace all object construction using `new` by registering the class with Autofac and replacing it's usage with with `container.Resolve`.
 
 ## Task 3 - Extract a module
 
