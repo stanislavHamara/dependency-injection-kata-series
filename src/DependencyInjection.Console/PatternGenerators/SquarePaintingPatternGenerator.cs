@@ -3,11 +3,11 @@ using DependencyInjection.Console.SquarePainters;
 
 namespace DependencyInjection.Console.PatternGenerators
 {
-    internal class SquareIndependentPatternGenerator : IPatternGenerator
+    internal class SquarePaintingPatternGenerator : IPatternGenerator
     {
         private readonly ISquarePainter _squarePainter;
 
-        public SquareIndependentPatternGenerator()
+        public SquarePaintingPatternGenerator()
         {
             _squarePainter = new CircleSquarePainter();
         }

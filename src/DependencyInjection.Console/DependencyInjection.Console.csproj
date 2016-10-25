@@ -55,7 +55,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Square.cs" />
-    <Compile Include="PatternGenerators\SquareIndependentPatternGenerator.cs" />
+    <Compile Include="PatternGenerators\SquarePaintingPatternGenerator.cs" />
     <Compile Include="PatternWriters\TextPatternWriter.cs" />
   </ItemGroup>
   <ItemGroup>

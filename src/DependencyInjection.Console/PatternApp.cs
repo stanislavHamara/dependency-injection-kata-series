@@ -11,7 +11,7 @@ namespace DependencyInjection.Console
         public PatternApp(bool useColours)
         {
             _patternWriter = useColours ? (IPatternWriter) new ColorTextPatternWriter() : new TextPatternWriter();
-            _patternGenerator = new SquareIndependentPatternGenerator();
+            _patternGenerator = new SquarePaintingPatternGenerator();
         }
 
         public void Run()
