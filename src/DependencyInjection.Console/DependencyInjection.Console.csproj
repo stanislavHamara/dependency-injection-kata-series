@@ -44,12 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PatternWriters\ColorTextPatternWriter.cs" />
-    <Compile Include="SquareGenerators\WhiteSquareGenerator.cs" />
+    <Compile Include="SquarePainters\WhiteSquarePainter.cs" />
     <Compile Include="PatternGenerators\IPatternGenerator.cs" />
     <Compile Include="PatternWriters\IPatternWriter.cs" />
-    <Compile Include="SquareGenerators\CircleSquareGenerator.cs" />
-    <Compile Include="SquareGenerators\ISquareGenerator.cs" />
-    <Compile Include="SquareGenerators\OddEvenSquareGenerator.cs" />
+    <Compile Include="SquarePainters\CircleSquarePainter.cs" />
+    <Compile Include="SquarePainters\ISquarePainter.cs" />
+    <Compile Include="SquarePainters\OddEvenSquarePainter.cs" />
     <Compile Include="Entities\Pattern.cs" />
     <Compile Include="PatternApp.cs" />
     <Compile Include="Program.cs" />
