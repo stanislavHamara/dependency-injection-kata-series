@@ -17,11 +17,11 @@ namespace DependencyInjection.Console
         {
             var squares = pattern.Squares;
 
-            for (var horizIndex = 0; horizIndex < squares.GetLength(0); ++horizIndex)
+            for (var j = 0; j < squares.GetLength(0); ++j)
             {
-                for (var vertIndex = 0; vertIndex < squares.GetLength(1); ++vertIndex)
+                for (var i = 0; i < squares.GetLength(1); ++i)
                 {
-                    _characterWriter.Write(squares[horizIndex, vertIndex]);
+                    _characterWriter.Write(squares[j, i]);
                 }
                 _characterWriter.WriteLine();
             }

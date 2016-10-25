@@ -4,7 +4,7 @@
     {
         public Pattern(int width, int height)
         {
-            Squares = new Square[width, height];
+            Squares = new Square[height, width];
         }
 
         public Square[,] Squares { get; }

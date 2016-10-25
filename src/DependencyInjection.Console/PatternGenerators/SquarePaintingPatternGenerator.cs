@@ -21,7 +21,7 @@ namespace DependencyInjection.Console.PatternGenerators
             {
                 for (var j = 0; j < height; ++j)
                 {
-                    squares[i, j] = _squarePainter.PaintSquare(width, height, i, j);
+                    squares[j, i] = _squarePainter.PaintSquare(width, height, i, j);
                 }
             }
 
