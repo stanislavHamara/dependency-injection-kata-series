@@ -37,8 +37,8 @@ Use constructor injection.
 
 Perform deduplication of static dependencies (be careful)
 
-### Task 3: Add a command line option to switch between patterns
+### Task 3: Use a command line option to switch between patterns
 
 We have provided three patterns for you to try. Unfortunately we only hooked one up!
 
-Please could you add a command line option to switch between these (do not use a container... yet!).
+Please could you use the command-line option `pattern` to switch between these (do not use a container... yet!)?
