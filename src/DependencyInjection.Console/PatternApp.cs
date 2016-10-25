@@ -1,16 +1,14 @@
-﻿using DependencyInjection.Console.PatternGenerators;
-
-namespace DependencyInjection.Console
+﻿namespace DependencyInjection.Console
 {
     internal class PatternApp
     {
         private readonly PatternWriter _patternWriter;
-        private readonly IPatternGenerator _patternGenerator;
+        private readonly PatternGenerator _patternGenerator;
 
         public PatternApp(bool useColours)
         {
             _patternWriter = new PatternWriter(useColours);
-            _patternGenerator = new SquarePaintingPatternGenerator();
+            _patternGenerator = new PatternGenerator();
         }
 
         public void Run()

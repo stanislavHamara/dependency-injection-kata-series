@@ -1,13 +1,13 @@
 ﻿using DependencyInjection.Console.Entities;
 using DependencyInjection.Console.SquarePainters;
 
-namespace DependencyInjection.Console.PatternGenerators
+namespace DependencyInjection.Console
 {
-    internal class SquarePaintingPatternGenerator : IPatternGenerator
+    internal class PatternGenerator
     {
         private readonly ISquarePainter _squarePainter;
 
-        public SquarePaintingPatternGenerator()
+        public PatternGenerator()
         {
             _squarePainter = new CircleSquarePainter();
         }
