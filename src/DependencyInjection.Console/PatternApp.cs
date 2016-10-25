@@ -11,9 +11,9 @@
             _patternGenerator = new PatternGenerator();
         }
 
-        public void Run()
+        public void Run(int width, int height)
         {
-            var pattern = _patternGenerator.Generate(25, 15);
+            var pattern = _patternGenerator.Generate(width, height);
             _patternWriter.Write(pattern);
         }
     }
