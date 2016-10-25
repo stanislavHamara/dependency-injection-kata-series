@@ -14,8 +14,8 @@ namespace DependencyInjection.Console.PatternGenerators
 
         public Pattern Generate(int width, int height)
         {
-            var generate = new Pattern(width, height);
-            var squares = generate.Squares;
+            var pattern = new Pattern(width, height);
+            var squares = pattern.Squares;
 
             for (var i = 0; i < width; ++i)
             {
@@ -25,7 +25,7 @@ namespace DependencyInjection.Console.PatternGenerators
                 }
             }
 
-            return generate;
+            return pattern;
         }
     }
 }
