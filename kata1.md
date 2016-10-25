@@ -2,7 +2,7 @@
 
 The purpose of dependency injection is to make it easier to maintain code. It forces the consumers of a class to supply dependencies to that class before using it.  If we use interfaces, this promotes loose coupling between the dependencies and the class, and we should always be able to change the behaviour of dependencies without changing the class.
 
-Dependency injection does not requires a DI container. DI containers are optional libraries that can make it easier to compose components when we wire up an application. This kata focusses on dependency injection without a container and we will cover containers in a future kata.
+Dependency injection does not require a DI container. DI containers are optional libraries that can make it easier to compose components when we wire up an application. This kata focusses on dependency injection without a container and we will cover containers in a future kata.
 
 ## Poor Man's Dependency Injection
 
