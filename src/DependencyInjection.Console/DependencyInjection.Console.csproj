@@ -43,10 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PatternWriters\ColorTextPatternWriter.cs" />
+    <Compile Include="CharacterWriters\AsciiWriter.cs" />
+    <Compile Include="CharacterWriters\ICharacterWriter.cs" />
     <Compile Include="SquarePainters\WhiteSquarePainter.cs" />
     <Compile Include="PatternGenerators\IPatternGenerator.cs" />
-    <Compile Include="PatternWriters\IPatternWriter.cs" />
     <Compile Include="SquarePainters\CircleSquarePainter.cs" />
     <Compile Include="SquarePainters\ISquarePainter.cs" />
     <Compile Include="SquarePainters\OddEvenSquarePainter.cs" />
@@ -56,7 +56,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Square.cs" />
     <Compile Include="PatternGenerators\SquarePaintingPatternGenerator.cs" />
-    <Compile Include="PatternWriters\TextPatternWriter.cs" />
+    <Compile Include="PatternWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
