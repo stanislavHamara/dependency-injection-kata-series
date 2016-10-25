@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterWriters\AsciiWriter.cs" />
+    <Compile Include="CharacterWriters\ColorWriter.cs" />
     <Compile Include="CharacterWriters\ICharacterWriter.cs" />
     <Compile Include="SquarePainters\WhiteSquarePainter.cs" />
     <Compile Include="PatternGenerators\IPatternGenerator.cs" />
