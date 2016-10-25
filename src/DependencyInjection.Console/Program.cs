@@ -6,8 +6,8 @@
         {
             var useColors = args.Length > 0 && args[0] == "colors";
 
-            var patternSimulation = new PatternApp(useColors);
-            patternSimulation.Run();
+            var app = new PatternApp(useColors);
+            app.Run();
         }
     }
 }
