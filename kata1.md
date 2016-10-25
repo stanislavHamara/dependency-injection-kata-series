@@ -25,6 +25,8 @@ private static void Main()
 
 We have provided you with a console application that draws patterns.
 
+![Circle Pattern](resources/circle-pattern.png)
+
 Find the entry point of this application.
 
 ### Task 2: Extract all methods to the top level of the application
