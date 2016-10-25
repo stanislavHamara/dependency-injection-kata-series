@@ -27,7 +27,7 @@ We have provided you with a console application that draws patterns.
 
 ![Circle Pattern](Resources/circle-pattern.png)
 
-Find the entry point of this application.
+Find the entry point of this application and learn about the different options it provides.
 
 ### Task 2: Extract all methods to the top level of the application
 
@@ -36,3 +36,9 @@ Use R# to extract all dependencies to the top level of the application. Extract 
 Use constructor injection.
 
 Perform deduplication of static dependencies (be careful)
+
+### Task 3: Add a command line option to switch between patterns
+
+We have provided three patterns for you to try. Unfortunately we only hooked one up!
+
+Please could you add a command line option to switch between these (do not use a container... yet!).
