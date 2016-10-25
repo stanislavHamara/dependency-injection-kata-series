@@ -25,7 +25,7 @@ private static void Main()
 
 We have provided you with a console application that draws patterns.
 
-![Circle Pattern](resources/circle-pattern.png)
+![Circle Pattern](Resources/circle-pattern.png)
 
 Find the entry point of this application.
 
