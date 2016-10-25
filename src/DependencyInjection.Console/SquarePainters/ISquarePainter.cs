@@ -2,7 +2,7 @@
 
 namespace DependencyInjection.Console.SquarePainters
 {
-    interface ISquarePainter
+    internal interface ISquarePainter
     {
         Square PaintSquare(int width, int height, int i, int j);
     }

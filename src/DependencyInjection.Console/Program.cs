@@ -1,8 +1,8 @@
 ﻿namespace DependencyInjection.Console
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var useColors = args.Length > 0 && args[0] == "colors";
 
