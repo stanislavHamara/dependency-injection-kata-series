@@ -13,7 +13,7 @@
 
         public void Run()
         {
-            var pattern = _patternGenerator.Generate(10, 10);
+            var pattern = _patternGenerator.Generate(25, 15);
             _patternWriter.Write(pattern);
         }
     }
