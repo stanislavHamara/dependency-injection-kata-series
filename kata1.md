@@ -29,16 +29,14 @@ We have provided you with a console application that draws patterns.
 
 Find the entry point of this application and learn about the different options it provides.
 
-### Task 2: Extract all methods to the top level of the application
+### Task 2: Extract dependencies to the top level of the application
 
-Use R# to extract all dependencies to the top level of the application. Extract “new” out of constructors.
+Wire up the application in one place using constructor injection. To do this you will need to recursively extract all dependencies as new constructor parameters. If you have done this right, the only place that constructs objects will be the entrypoint of the application.
 
-Use constructor injection.
-
-Perform deduplication of static dependencies (be careful)
+We encourage using R# as this codebase does not have tests.
 
 ### Task 3: Use a command line option to switch between patterns
 
-We have provided three patterns for you to try. Unfortunately we only hooked one up!
+We have provided three patterns for you to try. Unfortunately we only hooked one up.
 
-Please could you use the command-line option `pattern` to switch between these (do not use a container... yet!)?
+Use the command-line option `--pattern` to switch between these. Do not use a container... yet!
