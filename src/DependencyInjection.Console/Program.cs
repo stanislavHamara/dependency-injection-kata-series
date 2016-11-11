@@ -22,10 +22,25 @@ namespace DependencyInjection.Console
             };
             optionSet.Parse(args);
 
+            ISquarePainter squarePainter;
+            switch (pattern)
+            {
+                case "circle":
+                    squarePainter = new CircleSquarePainter();
+                    break;
+                case "oddeven":
+                    squarePainter = new OddEvenSquarePainter();
+                    break;
+                case "white":
+                    squarePainter = new WhiteSquarePainter();
+                    break;
+                default:
+                    System.Console.Error.WriteLine($"\"{pattern}\" is not a valid pattern");
+                    return;
+            }
             var asciiWriter = new AsciiWriter();
             var characterWriter = useColors ? (ICharacterWriter) new ColorWriter(asciiWriter) : asciiWriter;
             var patternWriter = new PatternWriter(characterWriter);
-            var squarePainter = new CircleSquarePainter();
             var patternGenerator = new PatternGenerator(squarePainter);
             var app = new PatternApp(patternWriter, patternGenerator);
             app.Run(width, height);
