@@ -9,7 +9,7 @@ namespace DependencyInjection.Console
             var useColors = false;
             var width = 25;
             var height = 15;
-            var pattern = "circle";
+            var pattern = "circle"; // TODO: Hook this up
 
             var optionSet = new OptionSet
             {
@@ -20,7 +20,7 @@ namespace DependencyInjection.Console
             };
             optionSet.Parse(args);
 
-            var app = new PatternApp(useColors, pattern);
+            var app = new PatternApp(useColors);
             app.Run(width, height);
         }
     }
