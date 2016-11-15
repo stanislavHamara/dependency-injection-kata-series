@@ -1,4 +1,5 @@
-﻿using DependencyInjection.Console.CharacterWriters;
+﻿using System;
+using DependencyInjection.Console.CharacterWriters;
 using DependencyInjection.Console.SquarePainters;
 using NDesk.Options;
 
@@ -11,7 +12,7 @@ namespace DependencyInjection.Console
             var useColors = false;
             var width = 25;
             var height = 15;
-            var pattern = "circle"; // TODO: Hook this up
+            var pattern = "circle";
 
             var optionSet = new OptionSet
             {
@@ -24,7 +25,7 @@ namespace DependencyInjection.Console
 
             var characterWriter = GetCharacterWriter(useColors);
             var patternWriter = new PatternWriter(characterWriter);
-            var squarePainter = new CircleSquarePainter();
+            var squarePainter = GetSquarePainter(pattern);
             var patternGenerator = new PatternGenerator(squarePainter);
 
             var app = new PatternApp(patternWriter, patternGenerator);
@@ -35,6 +36,21 @@ namespace DependencyInjection.Console
         {
             var writer = new AsciiWriter();
             return useColors ? (ICharacterWriter) new ColorWriter(writer) : writer;
+        }
+
+        private static ISquarePainter GetSquarePainter(string pattern)
+        {
+            switch (pattern)
+            {
+                case "circle":
+                    return new CircleSquarePainter();
+                case "oddeven":
+                    return new OddEvenSquarePainter();
+                case "white":
+                    return new WhiteSquarePainter();
+                default:
+                    throw new ArgumentException($"Pattern '{pattern}' not found!");
+            }
         }
     }
 }
